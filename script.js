@@ -98,24 +98,48 @@ function handleSubmit(event) {
     return;
   }
 
-  // Build WhatsApp message (optional quick contact)
-  const waText = encodeURIComponent(
-    `Hello Copyteque!\n\nName: ${name}\nPhone: ${phone || 'N/A'}\nEmail: ${email || 'N/A'}\nService: ${service || 'General Inquiry'}\nMessage: ${message || 'N/A'}`
-  );
-
-  // Show success message
   const form = document.getElementById('contactForm');
   const success = document.getElementById('form-success');
-  success.classList.remove('hidden');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  
+  // Show loading state
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
 
-  // Reset form after short delay
-  setTimeout(() => {
-    form.reset();
-    success.classList.add('hidden');
-  }, 5000);
-
-  // Optional: open WhatsApp (replace with real number)
-  // window.open(`https://wa.me/254727799120?text=${waText}`, '_blank');
+  // Send email
+  fetch('send-email.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      service: service,
+      message: message
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      success.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => {
+        success.classList.add('hidden');
+      }, 5000);
+    } else {
+      alert('Failed to send message. Please try again or contact us directly.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Failed to send message. Please try again or contact us directly.');
+  })
+  .finally(() => {
+    submitBtn.textContent = 'Send Message';
+    submitBtn.disabled = false;
+  });
 }
 
 // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
