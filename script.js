@@ -106,7 +106,7 @@ function handleSubmit(event) {
   submitBtn.textContent = 'Sending...';
   submitBtn.disabled = true;
 
-  // Send email
+  // Try the JSON API first
   fetch('send-email.php', {
     method: 'POST',
     headers: {
@@ -120,7 +120,12 @@ function handleSubmit(event) {
       message: message
     })
   })
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(data => {
     if (data.success) {
       success.classList.remove('hidden');
@@ -129,17 +134,51 @@ function handleSubmit(event) {
         success.classList.add('hidden');
       }, 5000);
     } else {
-      alert('Failed to send message. Please try again or contact us directly.');
+      console.error('Server error:', data);
+      // Fallback to simple form submission
+      trySimpleSubmission();
     }
   })
   .catch(error => {
-    console.error('Error:', error);
-    alert('Failed to send message. Please try again or contact us directly.');
+    console.error('Network error:', error);
+    // Fallback to simple form submission
+    trySimpleSubmission();
   })
   .finally(() => {
     submitBtn.textContent = 'Send Message';
     submitBtn.disabled = false;
   });
+
+  // Fallback function using simple form POST
+  function trySimpleSubmission() {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('service', service);
+    formData.append('message', message);
+
+    fetch('simple-email.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+      if (result.includes('SUCCESS')) {
+        success.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => {
+          success.classList.add('hidden');
+        }, 5000);
+      } else {
+        alert('Failed to send message: ' + result + '\n\nPlease contact Moses directly at:\nPhone: +254 726 699 120\nEmail: laisamoses@gmail.com');
+      }
+    })
+    .catch(error => {
+      console.error('Fallback error:', error);
+      alert('Unable to send message. Please contact Moses directly at:\nPhone: +254 726 699 120\nEmail: laisamoses@gmail.com');
+    });
+  }
 }
 
 // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
