@@ -85,10 +85,7 @@ function handleSubmit(event) {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const phone = document.getElementById('phone').value.trim();
-  const service = document.getElementById('service').value;
-  const message = document.getElementById('message').value.trim();
 
-  // Basic validation
   if (!name) {
     alert('Please enter your name.');
     return;
@@ -99,86 +96,27 @@ function handleSubmit(event) {
   }
 
   const form = document.getElementById('contactForm');
-  const success = document.getElementById('form-success');
-  const submitBtn = form.querySelector('button[type="submit"]');
-  
-  // Show loading state
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
+  const data = new FormData(form);
 
-  // Try the JSON API first
-  fetch('send-email.php', {
+  fetch(form.action, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      name: name,
-      email: email,
-      phone: phone,
-      service: service,
-      message: message
-    })
+    body: data,
+    headers: { 'Accept': 'application/json' }
   })
   .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    if (data.success) {
-      success.classList.remove('hidden');
+    if (response.ok) {
+      document.getElementById('form-success').classList.remove('hidden');
       form.reset();
       setTimeout(() => {
-        success.classList.add('hidden');
-      }, 5000);
+        document.getElementById('form-success').classList.add('hidden');
+      }, 6000);
     } else {
-      console.error('Server error:', data);
-      // Fallback to simple form submission
-      trySimpleSubmission();
+      alert('Something went wrong. Please try again or contact us directly on WhatsApp.');
     }
   })
-  .catch(error => {
-    console.error('Network error:', error);
-    // Fallback to simple form submission
-    trySimpleSubmission();
-  })
-  .finally(() => {
-    submitBtn.textContent = 'Send Message';
-    submitBtn.disabled = false;
+  .catch(() => {
+    alert('Network error. Please check your connection and try again.');
   });
-
-  // Fallback function using simple form POST
-  function trySimpleSubmission() {
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('service', service);
-    formData.append('message', message);
-
-    fetch('simple-email.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-      if (result.includes('SUCCESS')) {
-        success.classList.remove('hidden');
-        form.reset();
-        setTimeout(() => {
-          success.classList.add('hidden');
-        }, 5000);
-      } else {
-        alert('Failed to send message: ' + result + '\n\nPlease contact Moses directly at:\nPhone: +254 726 699 120\nEmail: laisamoses@gmail.com');
-      }
-    })
-    .catch(error => {
-      console.error('Fallback error:', error);
-      alert('Unable to send message. Please contact Moses directly at:\nPhone: +254 726 699 120\nEmail: laisamoses@gmail.com');
-    });
-  }
 }
 
 // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
