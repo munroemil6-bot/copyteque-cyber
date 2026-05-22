@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copyteque – Cyber & Office Supplies | Bungoma, Kenya</title>
+  <meta name="description" content="Copyteque – Professional cyber services and office supplies in Bungoma, Kenya. Run by Moses Wanjala Laisa, opposite Christ the King Cathedral." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Copyteque</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#supplies">Supplies</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-pattern"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Bungoma's Trusted Cyber &amp; Supplies Hub</div>
+      <h1 class="hero-title">
+        Your Digital &amp;<br/>
+        <span class="accent">Office Partner</span><br/>
+        in Bungoma
+      </h1>
+      <p class="hero-sub">
+        Professional cyber services, printing, and office supplies — all under one roof. 
+        Opposite Christ the King Cathedral, Bungoma town.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Explore Services</a>
+        <a href="#location" class="btn btn-outline">Find Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Services Offered</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Happy Clients</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Fast</span><span class="stat-label">Turnaround Time</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card floating">
+        <div class="hc-icon">🖨️</div>
+        <div class="hc-text">
+          <strong>Printing Ready</strong>
+          <span>Color &amp; B&amp;W available</span>
+        </div>
+      </div>
+      <div class="hero-card floating delay1">
+        <div class="hc-icon">💻</div>
+        <div class="hc-text">
+          <strong>Internet Access</strong>
+          <span>High-speed WiFi</span>
+        </div>
+      </div>
+      <div class="hero-card floating delay2">
+        <div class="hc-icon">📦</div>
+        <div class="hc-text">
+          <strong>Bulk Supplies</strong>
+          <span>For schools &amp; orgs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Internet Browsing</span><span class="dot">✦</span>
+      <span>Printing &amp; Scanning</span><span class="dot">✦</span>
+      <span>Photocopying</span><span class="dot">✦</span>
+      <span>Lamination</span><span class="dot">✦</span>
+      <span>Toner Cartridges</span><span class="dot">✦</span>
+      <span>Computer Typing</span><span class="dot">✦</span>
+      <span>School Supplies</span><span class="dot">✦</span>
+      <span>Email Services</span><span class="dot">✦</span>
+      <span>Binding</span><span class="dot">✦</span>
+      <span>ID Photos</span><span class="dot">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span>Internet Browsing</span><span class="dot">✦</span>
+      <span>Printing &amp; Scanning</span><span class="dot">✦</span>
+      <span>Photocopying</span><span class="dot">✦</span>
+      <span>Lamination</span><span class="dot">✦</span>
+      <span>Toner Cartridges</span><span class="dot">✦</span>
+      <span>Computer Typing</span><span class="dot">✦</span>
+      <span>School Supplies</span><span class="dot">✦</span>
+      <span>Email Services</span><span class="dot">✦</span>
+      <span>Binding</span><span class="dot">✦</span>
+      <span>ID Photos</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <div class="owner-initials">MWL</div>
+            <div class="owner-ring"></div>
+          </div>
+          <div class="about-badge-card">
+            <span class="badge-icon">📍</span>
+            <div>
+              <strong>Bungoma Town</strong>
+              <small>Opposite Christ the King Cathedral</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Meet the Owner</div>
+        <h2 class="section-title">Moses Wanjala Laisa</h2>
+        <p class="about-desc">
+          Moses Wanjala Laisa is the founder and proprietor of Copyteque — a professional, 
+          customer-focused cyber and office supplies business serving individuals, 
+          schools, and organizations across Bungoma County.
+        </p>
+        <p class="about-desc">
+          With a commitment to quality, affordability, and swift service, Copyteque has 
+          become a reliable destination for both walk-in cyber users and institutions 
+          requiring bulk office supplies. Whether you need a quick printout or a complete 
+          supply of toner cartridges for your school, Copyteque is your go-to stop.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="h-icon">✅</span>
+            <span>Experienced &amp; professional staff</span>
+          </div>
+          <div class="highlight-item">
+            <span class="h-icon">✅</span>
+            <span>Affordable rates for all budgets</span>
+          </div>
+          <div class="highlight-item">
+            <span class="h-icon">✅</span>
+            <span>Bulk supply for schools &amp; organizations</span>
+          </div>
+          <div class="highlight-item">
+            <span class="h-icon">✅</span>
+            <span>Fast turnaround on all services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CYBER SERVICES ===== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Cyber Services</h2>
+        <p class="section-sub">Everything you need for your digital tasks — done quickly, affordably, and professionally.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="sc-icon">🌐</div>
+          <h3>Internet Browsing</h3>
+          <p>High-speed internet access for research, job applications, social media, and more.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">🖨️</div>
+          <h3>Printing</h3>
+          <p>Black &amp; white and full-color printing on A4, A3, and custom paper sizes.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">📄</div>
+          <h3>Photocopying</h3>
+          <p>Fast and clear photocopying of documents — single or bulk copies available.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">📥</div>
+          <h3>Scanning</h3>
+          <p>Document scanning to PDF, JPEG, or email — preserving quality and clarity.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">🔒</div>
+          <h3>Lamination</h3>
+          <p>Protect your documents, certificates, and cards with professional lamination.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">📚</div>
+          <h3>Binding</h3>
+          <p>Spiral and thermal binding for reports, theses, proposals, and books.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">⌨️</div>
+          <h3>Computer Typing</h3>
+          <p>Fast and accurate typing services for CVs, letters, and official documents.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">📧</div>
+          <h3>Email &amp; M-PESA</h3>
+          <p>Help sending emails, filling forms online, and accessing M-PESA or banking portals.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">📸</div>
+          <h3>Passport / ID Photos</h3>
+          <p>Professional passport-size and ID photos printed on the spot.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">🎓</div>
+          <h3>HELB / eCitizen Support</h3>
+          <p>Assistance with HELB applications, eCitizen registrations, NHIF, and NSSF forms.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">💾</div>
+          <h3>Flash Disk / Data Transfer</h3>
+          <p>Transfer and print files from flash disks, phones, or emails.</p>
+        </div>
+        <div class="service-card">
+          <div class="sc-icon">🖥️</div>
+          <h3>Microsoft Office</h3>
+          <p>Word, Excel, PowerPoint — creation, formatting, and editing by skilled operators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUPPLIES ===== -->
+  <section class="section supplies" id="supplies">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Bulk &amp; Retail</div>
+        <h2 class="section-title">Office &amp; School Supplies</h2>
+        <p class="section-sub">We supply schools, churches, NGOs, and businesses with quality consumables and stationery.</p>
+      </div>
+      <div class="supplies-grid">
+        <div class="supply-item">
+          <div class="si-img">🖤</div>
+          <h4>Toner Cartridges</h4>
+          <p>Compatible &amp; original toners for HP, Canon, Epson, Samsung, Brother, and more.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">🖊️</div>
+          <h4>Ink Cartridges</h4>
+          <p>Color and black ink cartridges for inkjet printers — refilled or new.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">📋</div>
+          <h4>Printing Paper</h4>
+          <p>A4 reams, A3 sheets, glossy photo paper, and card stock in bulk quantities.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">📎</div>
+          <h4>Stationery</h4>
+          <p>Pens, pencils, rulers, staplers, hole punches, scissors, and more.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">🗂️</div>
+          <h4>Files &amp; Folders</h4>
+          <p>Lever arch files, manila folders, suspension files, and document wallets.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">📝</div>
+          <h4>Exercise Books</h4>
+          <p>Primary and secondary exercise books — available in wholesale for schools.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">📦</div>
+          <h4>Printer Drums &amp; Units</h4>
+          <p>Drum cartridges and maintenance units for long-running institutional printers.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">🧾</div>
+          <h4>Receipt Books &amp; Registers</h4>
+          <p>Official receipt books, attendance registers, and log books for organizations.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">🏷️</div>
+          <h4>Labels &amp; Adhesives</h4>
+          <p>Sticky labels, address labels, glue sticks, and adhesive tapes.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">📐</div>
+          <h4>Technical Drawing Sets</h4>
+          <p>Math sets, geometry tools, drawing boards — ideal for schools and colleges.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">🖥️</div>
+          <h4>Computer Accessories</h4>
+          <p>USB cables, flash drives, mouse, keyboard, and other peripherals.</p>
+        </div>
+        <div class="supply-item">
+          <div class="si-img">🎨</div>
+          <h4>Art &amp; Craft Supplies</h4>
+          <p>Colored pencils, markers, drawing paper, and watercolor sets for schools.</p>
+        </div>
+      </div>
+      <div class="supplies-cta">
+        <p>Need a bulk order for your school or institution?</p>
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCATION ===== -->
+  <section class="section location" id="location">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Where to Find Us</div>
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-sub">Conveniently located in the heart of Bungoma town — easy to find, easy to reach.</p>
+      </div>
+      <div class="location-grid">
+        <div class="location-info">
+          <div class="loc-detail">
+            <span class="loc-icon">📍</span>
+            <div>
+              <strong>Address</strong>
+              <p>Opposite Christ the King Cathedral, Bungoma Town, Bungoma County, Kenya</p>
+            </div>
+          </div>
+          <div class="loc-detail">
+            <span class="loc-icon">🕐</span>
+            <div>
+              <strong>Working Hours</strong>
+              <p>Monday – Saturday: 7:30 AM – 8:00 PM</p>
+              <p>Sunday: 10:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+          <div class="loc-detail">
+            <span class="loc-icon">📞</span>
+            <div>
+              <strong>Phone / WhatsApp</strong>
+              <p><a href="tel:+254726699120">+254 726 699 120</a> (update with real number)</p>
+            </div>
+          </div>
+          <div class="loc-detail">
+            <span class="loc-icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:copytequecyber@gmail.com">copytequecyber@gmail.com</a></p>
+            </div>
+          </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Christ+the+King+Cathedral+Bungoma+Kenya"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary map-btn"
+          >
+            📍 Open in Google Maps
+          </a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            title="Copyteque location map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7!2d34.563468!3d0.5664328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1781d69ee7053e9b%3A0xbe89d260399bcfbe!2sChrist%20the%20King%20Cathedral%20Bungoma!5e0!3m2!1sen!2ske!4v1710000000000"
+            width="100%"
+            height="400"
+            style="border:0; border-radius: 16px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Reach Out</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-sub">Have a question, need a quote, or want to place a bulk order? We'd love to hear from you.</p>
+      </div>
+      <div class="contact-card">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" placeholder="+254 XXX XXX XXX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="service">What do you need?</label>
+            <select id="service">
+              <option value="">Select a service or supply...</option>
+              <option>Internet / Cyber Services</option>
+              <option>Printing &amp; Photocopying</option>
+              <option>Scanning &amp; Lamination</option>
+              <option>Binding &amp; Finishing</option>
+              <option>Toner / Ink Cartridges</option>
+              <option>Bulk School Supplies</option>
+              <option>Office Stationery</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell us more about what you need..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Send Message</button>
+          <div id="form-success" class="form-success hidden">
+            ✅ Thank you! We'll get back to you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-mark">C</span>
+          <span class="logo-text">Copyteque</span>
+        </a>
+        <p>Your trusted cyber &amp; office supplies partner in Bungoma, Kenya.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Moses</a></li>
+          <li><a href="#services">Cyber Services</a></li>
+          <li><a href="#supplies">Office Supplies</a></li>
+          <li><a href="#location">Our Location</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 Opp. Christ the King Cathedral, Bungoma</p>
+        <p>📞 <a href="tel:+254726699120">+254 726 699 120</a></p>
+        <p>✉️ <a href="mailto:copytequecyber@gmail.com">copytequecyber@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Copyteque. All rights reserved. Proprietor: Moses Wanjala Laisa.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
