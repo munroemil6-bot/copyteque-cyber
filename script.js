@@ -15,10 +15,9 @@ window.addEventListener('scroll', () => {
     if (!footerBottom) return;
     const year = new Date().getFullYear();
     footerBottom.innerHTML = `© ${year} Copyteque. All rights reserved. Proprietor: Moses Wanjala Laisa. Site developer: Myles Munroe.`;
-  } catch (e) {
-    // fail silently if footer not present
-  }
+  } catch (e) {}
 })();
+
 // ===== MOBILE MENU TOGGLE =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -27,7 +26,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Close menu when a link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -62,7 +60,7 @@ const revealElements = document.querySelectorAll(
 );
 
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
@@ -98,7 +96,8 @@ function handleSubmit(event) {
   const form = document.getElementById('contactForm');
   const data = new FormData(form);
 
-  fetch(form.action, {
+  // URL hardcoded directly — do not rely on form.action attribute
+  fetch('https://formspree.io/f/xlgvnggg', {
     method: 'POST',
     body: data,
     headers: { 'Accept': 'application/json' }
@@ -111,10 +110,18 @@ function handleSubmit(event) {
         document.getElementById('form-success').classList.add('hidden');
       }, 6000);
     } else {
-      alert('Something went wrong. Please try again or contact us directly on WhatsApp.');
+      response.json().then(data => {
+        const msg = data.errors
+          ? data.errors.map(e => e.message).join(', ')
+          : 'Submission failed. Please try again.';
+        alert('Error: ' + msg);
+      }).catch(() => {
+        alert('Something went wrong. Please try again or WhatsApp us on +254 726 699 120.');
+      });
     }
   })
-  .catch(() => {
+  .catch((err) => {
+    console.error('Fetch error:', err);
     alert('Network error. Please check your connection and try again.');
   });
 }
@@ -126,7 +133,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.getElementById(targetId);
     if (target) {
       e.preventDefault();
-      const offset = 80; // nav height buffer
+      const offset = 80;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
@@ -145,7 +152,6 @@ window.addEventListener('load', () => {
     }, 400 + i * 200);
   });
 
-  // Hero title entrance
   const heroTitle = document.querySelector('.hero-title');
   const heroSub = document.querySelector('.hero-sub');
   const heroBadge = document.querySelector('.hero-badge');
