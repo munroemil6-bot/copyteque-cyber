@@ -167,4 +167,11 @@ window.addEventListener('load', () => {
       el.style.transform = 'translateY(0)';
     }, i * 150);
   });
+
+      //footer year
+    const year = new Date().getFullYear();
+    document.getElementById(
+    "copyright"
+    ).innerHTML = `© ${year} Copyteque. All rights reserved. Proprietor: Moses Wanjala Laisa. Site developer: Myles Munroe.`;
+
 });

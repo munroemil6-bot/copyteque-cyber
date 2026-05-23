@@ -482,41 +482,269 @@ img { display: block; max-width: 100%; }
 }
 
 /* ===== LOCATION ===== */
-.location { background: var(--cream); }
+/* =========================
+   LOCATION SECTION
+========================= */
+
+.location {
+
+  background:
+    linear-gradient(
+      to bottom,
+      #fdfbf7,
+      #f7f3eb
+    );
+}
+
+
+/* =========================
+   GRID
+========================= */
 
 .location-grid {
+
   display: grid;
+
   grid-template-columns: 1fr 1.4fr;
-  gap: 48px;
+
+  gap: 55px;
+
   align-items: start;
 }
 
-.loc-detail {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-.loc-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
-.loc-detail strong {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-.loc-detail p {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-.loc-detail a { color: var(--gold-dark); }
-.loc-detail a:hover { text-decoration: underline; }
 
-.map-btn { margin-top: 12px; }
+/* =========================
+   LOCATION INFO
+========================= */
+
+.location-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================
+   LOCATION CARD
+========================= */
+
+.loc-card {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding: 22px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255,255,255,0.65);
+
+  border:
+    1px solid rgba(255,255,255,0.5);
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.06);
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+
+  text-decoration: none;
+}
+
+
+/* HOVER */
+
+.loc-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.12),
+    0 0 20px rgba(212,175,55,0.08);
+
+  border-color:
+    rgba(212,175,55,0.22);
+}
+
+
+/* SHINE EFFECT */
+
+.loc-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.25),
+      transparent
+    );
+
+  transition: all 0.7s ease;
+}
+
+.loc-card:hover::before {
+
+  left: 130%;
+}
+
+
+/* =========================
+   ICON WRAPPER
+========================= */
+
+.loc-icon-wrap {
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212,175,55,0.18),
+      rgba(255,255,255,0.4)
+    );
+
+  transition: all 0.35s ease;
+}
+
+
+/* ICON */
+
+.loc-icon {
+
+  font-size: 1.3rem;
+}
+
+
+/* ICON HOVER */
+
+.loc-card:hover .loc-icon-wrap {
+
+  transform:
+    scale(1.05);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212,175,55,0.35),
+      rgba(255,255,255,0.45)
+    );
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.loc-content strong {
+
+  display: block;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  color: var(--ink);
+
+  margin-bottom: 8px;
+}
+
+
+.loc-content p {
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+
+  color: var(--ink-soft);
+}
+
+
+/* =========================
+   MAP BUTTON
+========================= */
+
+.map-btn {
+
+  margin-top: 10px;
+
+  width: fit-content;
+}
+
+
+/* =========================
+   MAP EMBED
+========================= */
+
+.map-embed {
+
+  position: relative;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.12);
+}
+
+
+/* MAP */
 
 .map-embed iframe {
-  border-radius: var(--radius) !important;
-  box-shadow: 0 12px 48px var(--shadow);
+
+  border-radius: 28px !important;
+
+  min-height: 100%;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .location-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .map-embed iframe {
+
+    height: 350px;
+  }
 }
 
 /* ===== CONTACT ===== */
@@ -627,6 +855,164 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 .footer-bottom p { font-size: 0.82rem; color: rgba(253,248,240,0.4); }
+
+/* =========================
+   FOOTER CONTACT
+========================= */
+
+.footer-contact h4 {
+
+  font-family: var(--font-display);
+
+  font-size: 1rem;
+
+  color: var(--cream);
+
+  margin-bottom: 20px;
+}
+
+
+/* STACK CONTACTS */
+
+.footer-contact {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* CONTACT CARD */
+
+.footer-contact-item {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px 18px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
+
+  color:
+    rgba(253,248,240,0.78);
+
+  text-decoration: none;
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+}
+
+
+/* ICON */
+
+.footer-icon {
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212,175,55,0.15),
+      rgba(255,255,255,0.06)
+    );
+
+  font-size: 1rem;
+
+  flex-shrink: 0;
+
+  transition: all 0.35s ease;
+}
+
+
+/* HOVER */
+
+.footer-contact-item:hover {
+
+  transform:
+    translateX(6px);
+
+  color: var(--cream);
+
+  border-color:
+    rgba(212,175,55,0.28);
+
+  background:
+    rgba(255,255,255,0.07);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18),
+    0 0 20px rgba(212,175,55,0.08);
+}
+
+
+/* ICON HOVER */
+
+.footer-contact-item:hover .footer-icon {
+
+  transform:
+    scale(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      rgba(255,255,255,0.18)
+    );
+}
+
+
+/* SHINE EFFECT */
+
+.footer-contact-item::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.08),
+      transparent
+    );
+
+  transition: all 0.7s ease;
+}
+
+.footer-contact-item:hover::before {
+
+  left: 130%;
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
